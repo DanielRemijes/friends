@@ -1,5 +1,3 @@
-
-
 <table class="table table-striped table-hover table-bordered">
   <thead class="thead-dark">
     <tr>
@@ -12,29 +10,41 @@
     </tr>
   </thead>
 
- <tbody>
+  <tbody>
     <% @friends.each do |friend| %>
       <tr>
-        <td><%= friend.first_name %>
+        <td>
+          <%= friend.first_name %>
         </td>
-        <td><%= friend.last_name %>
+        <td>
+          <%= friend.last_name %>
         </td>
-        <td><%= friend.email %></td>
-        <td><%= friend.phone %></td>
-        <td><%= friend.twitter %><td>
-        <td><%= link_to 'Show', friend %>
+        <td>
+          <%= friend.email %>
         </td>
-        <td><%= link_to 'Edit',edit_friend_path(friend) %></td>
+        <td>
+          <%= friend.phone %>
+        </td>
+        <td>
+          <%= friend.twitter %>
+        <td>
+        <td>
+          <%= link_to 'Show', friend %>
+        </td>
+        <td>
+          <%= link_to 'Edit',edit_friend_path(friend) %>
+        </td>
+        
         <br/>
 
-        <td><%= link_to 'Destroy', friend, method: :delete, data: { confirm: 'Are you sure?'} %>
+        <td>
+          <%= link_to 'Destroy', friend, data: { turbo_method: :delete, turbo_confirm: 'Are you sure?'} %>
         </td>              
-        </tr>
-        
-      <% end %>
-    </tbody>
-  </table> 
-  <br>
+      </tr>    
+    <% end %>
+  </tbody>
+</table> 
+  
+<br>
+
 <%= link_to "New friend", new_friend_path, class:"btn btn-secondary"%>
-
-
