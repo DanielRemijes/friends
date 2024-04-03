@@ -4,6 +4,6 @@ class HomeController < ApplicationController
   end
 
   def about
-
+    @reference = "Welcome to the Friends Listing App..."
   end
 end
